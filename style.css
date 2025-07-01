@@ -169,57 +169,52 @@ pre code {
   font-size: 0.95rem;
   color: #6b7280;
 }
+.intro-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 30px;
+}
+
 .intro-hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 60px 40px;
-  background-color: #f5f7fa;
+  gap: 60px;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .intro-left {
-  flex: 1;
   max-width: 600px;
 }
 
 .intro-left h1 {
-  font-size: 2.5rem;
+  font-size: 48px;
   font-weight: bold;
-  color: #1a2b4c;
-  margin-bottom: 16px;
-}
-
-.intro-left .subtitle {
-  font-size: 1.1rem;
-  color: #444;
   margin-bottom: 20px;
 }
 
+.intro-left .subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #444;
+}
+
 .intro-meta p {
+  font-size: 18px;
   margin: 6px 0;
-  color: #555;
-  font-size: 0.95rem;
 }
 
-.intro-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.intro-right img.rounded-image {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
+.rounded-image {
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
-.intro-right img {
-  max-width: 100%;
-  height: auto;
-}   
+
 .anh-ne {
   width: 50%;      /* Chỉ chiếm 50% chiều ngang */
   height: auto;
@@ -255,4 +250,47 @@ pre code {
   border-radius: 12px;
   margin-top: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.intro-wrapper {
+  display: flex;
+  justify-content: center;     /* Căn giữa ngang */
+  align-items: center;         /* Căn giữa dọc nếu cần */
+  padding: 40px 20px;
+}   
+.content {
+  font-size: 20px;      /* tăng nữa lên */
+  line-height: 1.8;     /* giãn dòng nhiều hơn */
+  color: #111;          /* đậm hơn một chút */
+}
+
+/* Tiêu đề các phần */
+.content h1 {
+  font-size: 34px;
+  margin-top: 40px;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+.content h3 {
+  font-size: 24px;
+  margin-top: 25px;
+}
+
+/* Danh sách dễ nhìn hơn */
+.content ul {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+/* Đoạn văn bản */
+.content p {
+  font-size: 20px;
+  margin-bottom: 16px;
 }
