@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar .logo {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav ul li a, .toggle-btn {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.sidebar nav ul li a:hover,
+.toggle-btn:hover {
+  background-color: #34495e;
+}
+
+.sub-menu {
+  display: none;
+  padding-left: 15px;
+  font-size: 14px;
+}
+
+.toggle.open .sub-menu {
+  display: block;
+}
+
+.content {
+  margin-left: 260px;
+  padding: 40px 30px;
+  flex-grow: 1;
+}
+
+.content section {
+  margin-bottom: 60px;
+}
+
+.content h1, .content h2 {
+  color: #2c3e50;
+}
+.flex-structure {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tree-structure {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tree-structure pre {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+.tree-description {
+  flex: 1;
+  min-width: 300px;
+}
+
+.tree-description ul {
+  padding-left: 20px;
+}
+
+.tree-description li {
+  margin-bottom: 10px;
+}
+.code-block {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  font-family: 'Courier New', monospace;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin: 16px 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  text-align: left;
+}
+pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 15px;
+  overflow-x: auto;
+  background: #1e1e1e;
+  color: #f8f8f2;
+}
+
+.code-block {
+  margin: 1rem 0;
+}
+.hero-banner {
+  width: 100%;
+  text-align: center;
+  background: #f9fafb;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.hero-banner h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.hero-banner .subtitle {
+  font-size: 1.2rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.hero-banner .meta {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+.intro-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: #f5f7fa;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.intro-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.intro-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a2b4c;
+  margin-bottom: 16px;
+}
+
+.intro-left .subtitle {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.intro-meta p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-right img.rounded-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.intro-right img {
+  max-width: 100%;
+  height: auto;
+}   
+.anh-ne {
+  width: 50%;      /* Chỉ chiếm 50% chiều ngang */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  display: block;
+}
+.lienhe-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.img-circle-right {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.thongke-wrapper {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.thongke-img-full {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

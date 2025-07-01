@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài liệu dự án</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2 class="logo">📘 Tài liệu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#gioi-thieu">Giới thiệu dự án</a></li>
+                    <li><a href="#kientruc">Kiến trúc hệ thống</a></li>
+
+                    <li class="toggle">
+                        <span class="toggle-btn">Các chức năng chính ▸</span>
+                        <ul class="sub-menu">
+                            <li><a href="#nguoidung">3.1 Quản lý người dùng</a></li>
+                            <li><a href="#baibien">3.2 Quản lý bãi biển</a></li>
+                            <li><a href="#tour">3.3 Quản lý tour du lịch</a></li>
+                            <li><a href="#dattour">3.4 Đặt tour</a></li>
+                            <li><a href="#danhgia">3.5 Đánh giá & Bình luận</a></li>
+                            <li><a href="#thongke">3.6 Thống kê & Báo cáo</a></li>
+                            <li><a href="#lienhe">3.7 Trang thông tin & liên hệ</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#cautruc">Cấu trúc thư mục & file</a></li>
+                    <li><a href="#caidat">Hướng dẫn cài đặt & chạy dự án</a></li>
+                    <li><a href="#sudung">Hướng dẫn sử dụng các chức năng</a></li>
+                    <li><a href="#thanhvien">Các thành viên & phân công công việc</a></li>
+                    <li><a href="#phuluc">Phụ lục: Một số đoạn code mẫu</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section class="intro-hero">
+                <section class="intro-hero">
+                    <div class="intro-left">
+                        <h1>🏖️ Beautiful Beaches</h1>
+                        <h3 class="subtitle">
+                            Hệ thống quản lý và đặt tour du lịch bãi biển hiện đại, thân thiện người dùng.
+                        </h3>
+                        <div class="intro-meta">
+                            <p><strong>Nhóm:</strong> BeachTeam-2025</p>
+                            <p><strong>Ngày cập nhật:</strong> 01/07/2025</p>
+                            <p><strong>Ngôn ngữ:</strong> Laravel + JS + Bootstrap</p>
+                            <p><strong>Thành viên:</strong> Nguyễn Duy Tân, Phan Văn Hiếu, Phan Thị Phương Trúc, Phạm
+                                Thanh Nhân</p>
+                        </div>
+                    </div>
+
+                    <div class="intro-right">
+                        <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-bien.jpg"
+                            alt="Ảnh bãi biển" class="rounded-image" />
+                    </div>
+                </section>
+
+            </section>
+
+            <!-- Các section nội dung -->
+            <section id="gioi-thieu">
+                <h1>Giới thiệu dự án</h1>
+                <p>Beautiful Beaches là một hệ thống web quản lý và đặt tour du lịch bãi biển, cho phép người dùng khám
+                    phá, đánh giá, đặt tour, quản lý thông tin cá nhân, và cung cấp các chức năng quản trị cho admin,
+                    CEO. Dự án sử dụng framework Laravel (PHP) kết hợp với giao diện hiện đại, thân thiện, hỗ trợ nhiều
+                    vai trò người dùng.</p>
+                Mục tiêu<ul>
+                    <li>Xây dựng nền tảng đặt tour bãi biển chuyên nghiệp, dễ sử dụng.</li>
+                    <li>Hỗ trợ quản lý đa vai trò: Admin, CEO, User.</li>
+                    <li>Tích hợp hệ thống đánh giá, bình luận, báo cáo doanh thu, quản lý tour, bãi biển, người dùng.
+                    </li>
+
+                </ul>
+            </section>
+            <section id="kientruc">
+                <h1>Kiến trúc hệ thống</h1>
+                <ul>
+                    <li>Backend: Laravel 12.x, PHP 8.2+</li>
+                    <li>Frontend: Blade Template, Bootstrap, CSS/JS tùy chỉnh</li>
+                    <li>Database: SQLite (có thể chuyển sang MySQL)</li>
+                    <li>Authentication: Laravel Auth, phân quyền theo middleware</li>
+                    <li>Cấu trúc thư mục: Theo chuẩn Laravel MVC</li>
+                    <li>Quản lý source: Git, chia branch theo chức năng </li>
+                </ul>
+                <p>Sơ đồ tổng quan:</p>
+                <img src="../Editor _ Mermaid Chart-2025-07-01-034650.svg" alt="">
+            </section>
+            <section id="nguoidung">
+                <h2>3.1 Quản lý người dùng</h2>
+                <ul>
+                    <li>Đăng ký, đăng nhập, đăng xuất</li>
+                    <li>Phân quyền: admin, ceo, user</li>
+                    <li>Quản lý thông tin cá nhân, đổi mật khẩu</li>
+                    <li>Admin có thể thêm, sửa, xóa, ban user</li>
+                </ul>
+            </section>
+            <section id="baibien">
+                <h2>3.2 Quản lý bãi biển</h2>
+                <ul>
+                    <li>Thêm, sửa, xóa bãi biển (admin)</li>
+                    <li>Quản lý chi tiết bãi biển: tên, khu vực, hình ảnh, mô tả, tags</li>
+                    <li>Hiển thị danh sách bãi biển cho người dùng</li>
+                </ul>
+            </section>
+            <section id="tour">
+                <h2>3.3 Quản lý tour du lịch</h2>
+                <ul>
+                    <li>Thêm, sửa, xóa tour (CEO)</li>
+                    <li>Quản lý chi tiết tour: tên, giá, thời gian, bãi biển liên quan, dịch vụ kèm theo</li>
+                    <li>Hiển thị danh sách tour, lọc theo khu vực, tìm kiếm</li>
+                </ul>
+            </section>
+            <section id="dattour">
+                <h2>3.4 Đặt tour</h2>
+                <ul>
+                    <li>Người dùng đặt tour, nhập thông tin liên hệ</li>
+                    <li>Quản lý lịch sử đặt tour (user)</li>
+                    <li>CEO xác nhận, cập nhật trạng thái booking</li>
+
+                </ul>
+            </section>
+            <section id="danhgia">
+                <h2>3.5 Đánh giá & Bình luận</h2>
+                <ul>
+                    <li>Người dùng đánh giá, bình luận bãi biển/tour</li>
+                    <li>Hiển thị danh sách đánh giá, xếp hạng sao</li>
+                    <li>Quản lý, kiểm duyệt bình luận (admin/ceo)</li>
+                </ul>
+            </section>
+            <section id="thongke" class="thongke-section">
+ <h2>3.6 Thống kê & Báo cáo</h2>
+<div class="thongke-wrapper">
+  <ul>
+    <li>Thống kê doanh thu theo tháng (CEO)</li>
+    <li>Báo cáo số lượng booking, doanh thu, tour nổi bật</li>
+    <li>Giao diện báo cáo trực quan, xuất file</li>
+  </ul>
+  <img src="https://images.unsplash.com/photo-1613347761493-4060c969cd28?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+       alt="Ảnh thống kê doanh thu"
+       class="thongke-img-full" />
+</div>
+
+</section>
+
+            <section id="lienhe">
+                <h2>3.7 Trang thông tin & liên hệ</h2>
+                <ul>
+                    <li>Trang giới thiệu, gallery, liên hệ, gửi thắc mắc</li>
+                    <li>Footer, header, sidebar tùy biến theo vai trò</li>
+                </ul>
+                
+            </section>
+            <section id="cautruc">
+                <h1>4. Cấu trúc thư mục & file</h1>
+
+                <div class="flex-structure">
+                    <!-- Cột trái: sơ đồ -->
+                    <div class="tree-structure">
+                        <pre><code>BeautifulBeaches/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   ├── Middleware/
+│   ├── Models/
+│   └── Providers/
+├── bootstrap/
+├── config/
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── Data/
+├── public/
+├── resources/
+│   ├── views/
+│   │   ├── admin/
+│   │   ├── ceo/
+│   │   ├── layouts/
+│   │   ├── pages/
+│   │   ├── user/
+│   ├── css/
+│   └── js/
+├── routes/
+│   └── web.php
+├── storage/
+├── tests/
+├── .env
+├── .gitignore
+├── artisan
+├── composer.json
+└── README.md
+</code></pre>
+                    </div>
+
+                    <!-- Cột phải: mô tả chi tiết -->
+                    <div class="tree-description">
+                        <h3>📁 Mô tả các thư mục</h3>
+                        <ul>
+                            <li><strong>Controllers:</strong> Xử lý logic của từng module: User, Tour, Booking,
+                                Report...</li>
+                            <li><strong>Middleware:</strong> Kiểm soát quyền truy cập, kiểm tra đăng nhập.</li>
+                            <li><strong>Models:</strong> Đại diện bảng dữ liệu như User, Tour, Beach...</li>
+                            <li><strong>views/:</strong> Blade template chia theo vai trò: admin, ceo, user.</li>
+                            <li><strong>migrations:</strong> Tạo bảng CSDL.</li>
+                            <li><strong>seeders:</strong> Thêm dữ liệu mẫu ban đầu.</li>
+                            <li><strong>web.php:</strong> Định nghĩa route toàn bộ hệ thống.</li>
+                            <li><strong>public/:</strong> Chứa ảnh, JS, CSS truy cập công khai.</li>
+                            <li><strong>config/: </strong> Cấu hình app, DB, mail,...</li>
+                            <li><strong>artisan:</strong> CLI của Laravel hỗ trợ tạo file nhanh.</li>
+                            <li><strong>.env:</strong> Biến môi trường riêng cho dự án.</li>
+                            <li><strong>README.md:</strong> Hướng dẫn sử dụng, giới thiệu dự án.</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="caidat">
+                <h1>5. Hướng dẫn cài đặt & chạy dự án</h1>
+
+                <h3>📦 Các bước cài đặt:</h3>
+
+                <p><strong>1. Clone source về máy:</strong></p>
+                <div class="code-block">
+                    <code>
+&lt;?php<br>
+public function index()<br>
+{<br>
+&nbsp;&nbsp;$reviews = Review::all();<br>
+&nbsp;&nbsp;return response()-&gt;json($reviews);<br>
+}
+  </code>
+                </div>
+
+
+                <p><strong>2. Cài đặt thư viện PHP:</strong></p>
+                <div class="code-block">
+                    <code>composer install</code>
+                </div>
+
+                <p><strong>3. Cài đặt thư viện JS (nếu dùng):</strong></p>
+                <div class="code-block">
+                    <code>
+npm install
+npm run dev
+    </code>
+                </div>
+
+                <p><strong>4. Tạo file cấu hình môi trường:</strong></p>
+                <div class="code-block">
+                    <code>
+cp .env.example .env
+php artisan key:generate
+    </code>
+                </div>
+
+                <p><strong>5. Cấu hình database trong <code>.env</code>:</strong></p>
+                <ul>
+                    <li>Mặc định dùng SQLite: <code>DB_CONNECTION=sqlite</code></li>
+                    <li>Nếu dùng MySQL, sửa lại các thông tin kết nối</li>
+                </ul>
+
+                <p><strong>6. Tạo database và migrate:</strong></p>
+                <div class="code-block">
+                    <code>
+php artisan migrate
+php artisan db:seed
+    </code>
+                </div>
+
+                <p><strong>7. Chạy server:</strong></p>
+                <div class="code-block">
+                    <code>php artisan serve</code>
+                </div>
+
+                <p>🔗 Truy cập <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a></p>
+            </section>
+
+            <section id="sudung">
+                <h1>6. Hướng dẫn sử dụng các chức năng</h1>
+
+                <h3>6.1 Đăng ký, đăng nhập, phân quyền</h2>
+                    <ul>
+                        <li>Người dùng đăng ký tài khoản và đăng nhập để sử dụng các chức năng như đặt tour, đánh giá,
+                            quản lý cá nhân.</li>
+                        <li>Admin và CEO đăng nhập để truy cập các chức năng quản trị hệ thống.</li>
+                    </ul>
+
+                    <h3>6.2 Quản lý bãi biển</h2>
+                        <ul>
+                            <li>Admin truy cập dashboard, chọn mục <strong>“Quản lý bãi biển”</strong>.</li>
+                            <li>Thực hiện các thao tác: thêm mới, chỉnh sửa, xóa bãi biển.</li>
+                            <li>Thông tin mỗi bãi biển gồm: tên, khu vực, hình ảnh, mô tả, tags liên quan.</li>
+                        </ul>
+
+                        <h3>6.3 Quản lý tour</h2>
+                            <ul>
+                                <li>CEO vào dashboard, chọn mục <strong>“Quản lý tour”</strong>.</li>
+                                <li>Thêm/sửa/xóa tour du lịch: nhập tên tour, giá, thời gian, bãi biển liên quan và dịch
+                                    vụ kèm theo.</li>
+                            </ul>
+
+                            <h3>6.4 Đặt tour</h2>
+                                <ul>
+                                    <li>Người dùng chọn tour mong muốn từ danh sách.</li>
+                                    <li>Điền thông tin liên hệ và xác nhận đặt tour.</li>
+                                    <li>Xem lại lịch sử đặt tour tại trang dashboard cá nhân.</li>
+                                </ul>
+
+                                <h3>6.5 Đánh giá & bình luận</h2>
+                                    <ul>
+                                        <li>Người dùng vào chi tiết bãi biển hoặc tour để đánh giá.</li>
+                                        <li>Gửi số sao (rating) và bình luận nội dung.</li>
+                                        <li>Đánh giá hiển thị công khai và có thể được kiểm duyệt bởi admin/CEO.</li>
+                                    </ul>
+
+                                    <h3>6.6 Thống kê & báo cáo</h2>
+                                        <ul>
+                                            <li>CEO vào mục <strong>“Thống kê doanh thu”</strong> để theo dõi số liệu hệ
+                                                thống.</li>
+                                            <li>Xem báo cáo doanh thu, số lượng booking, tour nổi bật.</li>
+                                            <li>Có thể lọc theo tháng, năm và xuất ra file báo cáo.</li>
+                                        </ul>
+
+                                        <h3>6.7 Trang thông tin & liên hệ</h2>
+                                            <ul>
+                                                <li>Người dùng có thể truy cập các trang: <strong>Giới thiệu</strong>,
+                                                    <strong>Gallery</strong>, <strong>Liên hệ</strong>, <strong>Gửi thắc
+                                                        mắc</strong>.</li>
+                                                <li>Form liên hệ sẽ gửi thông tin đến quản trị viên để xử lý yêu cầu của
+                                                    người dùng.</li>
+                                            </ul>
+            </section>
+            <section id="thanhvien">
+                <h1>7. Các thành viên & phân công công việc <a name="cac-thanh-vien-phan-cong"></a></h1>
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Họ tên</th>
+                            <th>Vai trò</th>
+                            <th>Công việc chính</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tân bị ái</td>
+                            <td>Trưởng nhóm</td>
+                            <td>Kiến trúc hệ thống, quản lý dự án</td>
+                        </tr>
+                        <tr>
+                            <td>Phan Thị Phương Trúc</td>
+                            <td>Backend</td>
+                            <td>Module Tour, Booking, API</td>
+                        </tr>
+                        <tr>
+                            <td>Phan Văn Hiếu</td>
+                            <td>Frontend</td>
+                            <td>Giao diện người dùng, responsive</td>
+                        </tr>
+                        <tr>
+                            <td>Phạm Thanh Nhân</td>
+                            <td>Database</td>
+                            <td>Thiết kế CSDL, migration, seeder</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+            <section id="phuluc">
+                <h1>8. Phụ lục: Một số đoạn code mẫu <a name="phu-luc-doan-code-mau"></a></h1>
+
+                <h3>8.1 Migration tạo bảng <code>reviews</code></h3>
+                <div class="code-block">
+                    <code>
+&lt;?php<br>
+Schema::create('reviews', function (Blueprint $table) {<br>
+&nbsp;&nbsp;$table-&gt;id();<br>
+&nbsp;&nbsp;$table-&gt;foreignId('user_id')-&gt;constrained()-&gt;onDelete('cascade');<br>
+&nbsp;&nbsp;$table-&gt;unsignedBigInteger('beach_id');<br>
+&nbsp;&nbsp;$table-&gt;tinyInteger('rating')-&gt;unsigned();<br>
+&nbsp;&nbsp;$table-&gt;text('comment')-&gt;nullable();<br>
+&nbsp;&nbsp;$table-&gt;timestamps();<br>
+&nbsp;&nbsp;$table-&gt;foreign('beach_id')-&gt;references('id')-&gt;on('beaches')-&gt;onDelete('cascade');<br>
+});
+    </code>
+                </div>
+
+                <h3>8.2 Model <code>Review</code></h3>
+                <div class="code-block">
+                    <code>
+&lt;?php<br>
+class Review extends Model<br>
+{<br>
+&nbsp;&nbsp;use HasFactory;<br>
+&nbsp;&nbsp;protected $fillable = ['user_id', 'beach_id', 'rating', 'comment'];<br>
+}
+    </code>
+                </div>
+                <h3>8.3 Controller trả về danh sách review</h3>
+                <div class="code-block">
+                    <code>
+&lt;?php<br>
+public function index()<br>
+{<br>
+&nbsp;&nbsp;$reviews = Review::all();<br>
+&nbsp;&nbsp;return response()-&gt;json($reviews);<br>
+}
+    </code>
+                </div>
+
+                <h3>8.4 Route reviews</h3>
+                <div class="code-block">
+                    <code>
+&lt;?php<br>
+Route::get('/reviews', [ReviewController::class, 'index']);
+    </code>
+                </div>
+            </section>
+
+            <section id="ketluan">
+                <h2>Kết luận</h2>
+                <p>
+                    Dự án <strong>Beautiful Beaches</strong> là một hệ thống hoàn chỉnh, đáp ứng đầy đủ các yêu cầu về
+                    quản lý, đặt tour, đánh giá, báo cáo cho một nền tảng du lịch bãi biển hiện đại.
+                </p>
+                <p>
+                    Tài liệu này giúp bạn và nhóm dễ dàng bảo trì, phát triển và mở rộng hệ thống trong tương lai.
+                </p>
+            </section>
+
+            </section>
+
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
