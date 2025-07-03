@@ -297,3 +297,67 @@ pre code {
 .content {
   font-size: 20px;
 }
+.dfd-diagram {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.dfd-diagram img {
+  max-width: 40%;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dfd-caption {
+  font-style: italic;
+  margin-top: 10px;
+  color: #666;
+}
+.full-img {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.rounded-image {
+    border-radius: 12px;
+    max-width: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    margin: 12px 0;
+}
+.rounded-image-circle {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.rounded-image-box {
+  border-radius: 12px;
+  max-width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  margin: 12px 0;
+}
+.features-section {
+  padding: 20px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.features-box {
+  flex: 1 1 300px;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+

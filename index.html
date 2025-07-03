@@ -10,10 +10,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
+    <style>
+        .image-wrapper {
+            text-align: center;
+            margin: 20px 0;
+        }
 
+        .image-wrapper img {
+            max-width: 80%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 
 <body>
+
 
     <div class="container">
         <aside class="sidebar">
@@ -22,6 +41,10 @@
                 <ul>
                     <li><a href="#gioi-thieu">Giới thiệu dự án</a></li>
                     <li><a href="#kientruc">Kiến trúc hệ thống</a></li>
+                    <li><a href="#phantich-thietke">Phân tích và thiết kế dự án</a></li>
+                    <li><a href="#thietke-ui">Thiết kế giao diện (UI)</a></li>
+                    <li><a href="#luonghoatdong">Luồng hoạt động người dùng</a></li>
+
 
                     <li class="toggle">
                         <span class="toggle-btn">Các chức năng chính ▸</span>
@@ -47,30 +70,30 @@
 
         <main class="content">
             <div class="intro-wrapper">
-  <div class="intro-wrapper">
-  <section class="intro-hero">
-    <div class="intro-left">
-      <h1>🏖️ Beautiful Beaches</h1>
-      <h3 class="subtitle">
-        Hệ thống quản lý và đặt tour du lịch bãi biển hiện đại, thân thiện người dùng.
-      </h3>
-      <div class="intro-meta">
-        <p><strong>Nhóm:</strong> BeachTeam-2025</p>
-        <p><strong>Ngày cập nhật:</strong> 01/07/2025</p>
-        <p><strong>Ngôn ngữ:</strong> Laravel + JS + Bootstrap</p>
-        <p><strong>Thành viên:</strong> Nguyễn Duy Tân, Phan Văn Hiếu, Phan Thị Phương Trúc, Phạm Thanh Nhân</p>
-      </div>
-    </div>
+                <div class="intro-wrapper">
+                    <section class="intro-hero">
+                        <div class="intro-left">
+                            <h1>🏖️ Beautiful Beaches</h1>
+                            <h3 class="subtitle">
+                                Hệ thống quản lý và đặt tour du lịch bãi biển hiện đại, thân thiện người dùng.
+                            </h3>
+                            <div class="intro-meta">
+                                <p><strong>Nhóm:</strong> BeachTeam-2025</p>
+                                <p><strong>Ngày cập nhật:</strong> 01/07/2025</p>
+                                <p><strong>Ngôn ngữ:</strong> Laravel + JS + Bootstrap</p>
+                                <p><strong>Thành viên:</strong> Nguyễn Duy Tân, Phan Văn Hiếu, Phan Thị Phương Trúc,
+                                    Phạm Thanh Nhân</p>
+                            </div>
+                        </div>
 
-    <div class="intro-right">
-      <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-bien.jpg"
-           alt="Ảnh bãi biển"
-           class="rounded-image" />
-    </div>
-  </section>
-</div>
+                        <div class="intro-right">
+                            <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-bien.jpg"
+                                alt="Ảnh bãi biển" class="rounded-image-circle" />
+                        </div>
+                    </section>
+                </div>
 
-</div>
+            </div>
 
 
             <!-- Các section nội dung -->
@@ -101,71 +124,160 @@
                 <p>Sơ đồ tổng quan:</p>
                 <img src="img/Editor _ Mermaid Chart-2025-07-01-034650.svg" alt="">
             </section>
+            <section id="functional-nonfunctional" class="features-section">
+                <h2 id="phantich-thietke">📋 Yêu cầu chức năng và phi chức năng</h2>
+                <div class="features-grid">
+                    <div class="features-box">
+                        <h3>1. Yêu cầu chức năng</h3>
+                        <ul>
+                            <li>Người dùng có thể đăng ký và đăng nhập hệ thống.</li>
+                            <li>Người dùng có thể xem danh sách tour, chi tiết tour.</li>
+                            <li>Người dùng có thể đặt tour và thanh toán.</li>
+                            <li>Quản trị viên có thể quản lý người dùng, tour, đơn đặt hàng.</li>
+                            <li>Hệ thống gửi email xác nhận khi đặt tour thành công.</li>
+                        </ul>
+                    </div>
+                    <div class="features-box">
+                        <h3>2. Yêu cầu phi chức năng</h3>
+                        <ul>
+                            <li>Giao diện đơn giản, dễ sử dụng trên cả desktop và mobile.</li>
+                            <li>Hệ thống phải có tính bảo mật cao (mã hóa mật khẩu, xác thực quyền).</li>
+                            <li>Thời gian phản hồi phải nhanh (dưới 2 giây cho mỗi thao tác).</li>
+                            <li>Khả năng mở rộng để hỗ trợ nhiều người dùng truy cập cùng lúc.</li>
+                            <li>Có thể triển khai trên nhiều môi trường (Windows, Linux).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="thietke-ui">
+                <h1>Thiết kế giao diện người dùng (UI)</h1>
+                <p>Giao diện người dùng được thiết kế hiện đại, dễ sử dụng và thân thiện với cả người dùng phổ thông lẫn
+                    quản trị viên. Sử dụng Bootstrap kết hợp CSS tùy chỉnh để tối ưu trải nghiệm trên cả desktop và
+                    mobile.</p>
+
+                <h3>1. Trang chủ</h3>
+                <div class="image-wrapper">
+                    <img src="/img/trang_chu.jpg" alt="Trang chủ">
+                </div>
+
+
+                <h3>2. Danh sách tour du lịch</h3>
+                <div class="image-wrapper">
+                    <img src="/img/trang_chu.jpg" alt="Trang chủ">
+                </div>
+
+                <h3>3. Chi tiết tour</h3>
+                <div class="image-wrapper">
+                    <img src="/img/trang_chu.jpg" alt="Trang chủ">
+                </div>
+
+                <h3>4. Trang đặt tour</h3>
+                <div class="image-wrapper">
+                    <img src="/img/trang_chu.jpg" alt="Trang chủ">
+                </div>
+
+                <h3>5. Giao diện quản trị</h3>
+                <div class="image-wrapper">
+                    <img src="/img/trang_chu.jpg" alt="Trang chủ">
+                </div>
+            </section>
+
+            <section id="dfd">
+                <h1>DFD – Sơ đồ luồng dữ liệu (Level 0)</h1>
+                <p>Sơ đồ DFD cấp 0 mô tả tổng quát các luồng dữ liệu giữa người dùng, hệ thống và cơ sở dữ liệu. Nó giúp
+                    hiểu được cách dữ liệu di chuyển trong toàn hệ thống.</p>
+
+                <div class="dfd-diagram">
+                    <img src="/img/so_do_DFD.svg" alt="Sơ đồ DFD Level 0">
+                    <p class="dfd-caption">Hình: Sơ đồ luồng dữ liệu cấp 0 (DFD Level 0)</p>
+                </div>
+            </section>
+            <section id="erd">
+                <h1>Sơ đồ ERD (Entity Relationship Diagram)</h1>
+                <p>Sơ đồ ERD mô tả các bảng trong cơ sở dữ liệu và mối quan hệ giữa chúng trong hệ thống quản lý tour du
+                    lịch bãi biển.</p>
+                <img src="/img/so_do_erd.png" alt="Sơ đồ ERD" class="full-img">
+            </section>
+
+            <section id="luonghoatdong">
+                <h1>Luồng hoạt động của người dùng</h1>
+                <p>Phần này mô tả luồng hoạt động chính của người dùng trong hệ thống. Dưới đây là các bước điển hình:
+                </p>
+                <ol>
+                    <li><strong>Người dùng truy cập trang chủ</strong> để xem các tour nổi bật, thông tin giới thiệu.
+                    </li>
+                    <li><strong>Người dùng tìm kiếm hoặc duyệt tour</strong> theo tên, khu vực hoặc loại.</li>
+                    <li><strong>Xem chi tiết tour</strong>: Lịch trình, hình ảnh, giá cả, các dịch vụ đi kèm.</li>
+                    <li><strong>Đặt tour:</strong> Nhập thông tin cá nhân và xác nhận đặt tour.</li>
+                    <li><strong>Quản lý đặt tour:</strong> Xem lại lịch sử đặt tour và trạng thái xác nhận.</li>
+                    <li><strong>Đăng nhập/Đăng ký:</strong> Để có thể đặt tour hoặc đánh giá.</li>
+                    <li><strong>Đánh giá/Bình luận:</strong> Sau khi đi tour, người dùng có thể để lại đánh giá.</li>
+                </ol>
+
+                <div class="image-wrapper">
+                    <img src="https://f.howkteam.vn/Upload/cke/images/2_IMAGE%20TUTORIAL/14_PTTK%20ph%E1%BA%A7n%20m%E1%BB%81m/Bai3/9_T%E1%BA%A1o%20Activity%20Diagram_Howkteam_vn.png"
+                        alt="Luồng hoạt động người dùng">
+                    <p><i>Hình: Luồng hoạt động của người dùng trong hệ thống</i></p>
+                </div>
+            </section>
+
             <section id="nguoidung">
-                <h2>3.1 Quản lý người dùng</h2>
-                <ul>
-                    <li>Đăng ký, đăng nhập, đăng xuất</li>
-                    <li>Phân quyền: admin, ceo, user</li>
-                    <li>Quản lý thông tin cá nhân, đổi mật khẩu</li>
-                    <li>Admin có thể thêm, sửa, xóa, ban user</li>
-                </ul>
-            </section>
-            <section id="baibien">
-                <h2>3.2 Quản lý bãi biển</h2>
-                <ul>
-                    <li>Thêm, sửa, xóa bãi biển (admin)</li>
-                    <li>Quản lý chi tiết bãi biển: tên, khu vực, hình ảnh, mô tả, tags</li>
-                    <li>Hiển thị danh sách bãi biển cho người dùng</li>
-                </ul>
-            </section>
-            <section id="tour">
-                <h2>3.3 Quản lý tour du lịch</h2>
-                <ul>
-                    <li>Thêm, sửa, xóa tour (CEO)</li>
-                    <li>Quản lý chi tiết tour: tên, giá, thời gian, bãi biển liên quan, dịch vụ kèm theo</li>
-                    <li>Hiển thị danh sách tour, lọc theo khu vực, tìm kiếm</li>
-                </ul>
-            </section>
-            <section id="dattour">
-                <h2>3.4 Đặt tour</h2>
-                <ul>
-                    <li>Người dùng đặt tour, nhập thông tin liên hệ</li>
-                    <li>Quản lý lịch sử đặt tour (user)</li>
-                    <li>CEO xác nhận, cập nhật trạng thái booking</li>
-
-                </ul>
-            </section>
-            <section id="danhgia">
-                <h2>3.5 Đánh giá & Bình luận</h2>
-                <ul>
-                    <li>Người dùng đánh giá, bình luận bãi biển/tour</li>
-                    <li>Hiển thị danh sách đánh giá, xếp hạng sao</li>
-                    <li>Quản lý, kiểm duyệt bình luận (admin/ceo)</li>
-                </ul>
-            </section>
-            <section id="thongke" class="thongke-section">
- <h2>3.6 Thống kê & Báo cáo</h2>
-<div class="thongke-wrapper">
-  <ul>
-    <li>Thống kê doanh thu theo tháng (CEO)</li>
-    <li>Báo cáo số lượng booking, doanh thu, tour nổi bật</li>
-    <li>Giao diện báo cáo trực quan, xuất file</li>
-  </ul>
-  <img src="https://img.lovepik.com/photo/50066/7473.jpg_wh860.jpg"
-       alt="Ảnh thống kê doanh thu"
-       class="thongke-img-full" />
-</div>
-
+    <h2>3.1 Quản lý người dùng</h2>
+    <p>Chức năng cho phép admin và CEO quản lý thông tin người dùng: thêm, sửa, xóa, phân quyền. Người dùng có thể cập nhật thông tin cá nhân.</p>
+    <div class="image-wrapper">
+        <img src="https://www.figma.com/community/resource/5e564b3e-b694-4b3a-a4ac-5d18b767bc1f/thumbnail" alt="Quản lý người dùng" />
+    </div>
 </section>
 
-            <section id="lienhe">
-                <h2>3.7 Trang thông tin & liên hệ</h2>
-                <ul>
-                    <li>Trang giới thiệu, gallery, liên hệ, gửi thắc mắc</li>
-                    <li>Footer, header, sidebar tùy biến theo vai trò</li>
-                </ul>
-                
-            </section>
+<section id="baibien">
+    <h2>3.2 Quản lý bãi biển</h2>
+    <p>Admin có thể thêm các bãi biển mới, chỉnh sửa thông tin, gắn hình ảnh, vị trí. Cho phép duyệt các đánh giá liên quan đến bãi biển đó.</p>
+    <div class="image-wrapper">
+        <img src="/img/danh_sach_bai_bien.jpg" alt="Quản lý bãi biển" />
+    </div>
+</section>
+
+<section id="tour">
+    <h2>3.3 Quản lý tour du lịch</h2>
+    <p>Chức năng quản lý danh sách tour, thông tin chi tiết, lịch trình, giá cả, số lượng khách tối đa. CEO có thể xem và duyệt các tour được tạo.</p>
+    <div class="image-wrapper">
+        <img src="/img/danh_sach_tour.jpg" alt="Quản lý tour du lịch" />
+    </div>
+</section>
+
+<section id="dattour">
+    <h2>3.4 Đặt tour</h2>
+    <p>Người dùng có thể chọn tour, nhập thông tin và thanh toán (giả lập). Sau khi đặt tour, hệ thống sẽ gửi email xác nhận cho người dùng.</p>
+    <div class="image-wrapper">
+        <img src="img/feature_booking.png" alt="Đặt tour" />
+    </div>
+</section>
+
+<section id="danhgia">
+    <h2>3.5 Đánh giá & Bình luận</h2>
+    <p>Sau khi tham gia tour, người dùng có thể đánh giá (sao + nội dung) và bình luận. Admin có thể kiểm duyệt và xóa nội dung không phù hợp.</p>
+    <div class="image-wrapper">
+        <img src="img/feature_review.png" alt="Đánh giá và Bình luận" />
+    </div>
+</section>
+
+<section id="thongke">
+    <h2>3.6 Thống kê & Báo cáo</h2>
+    <p>Hệ thống tự động tạo thống kê doanh thu, lượt đặt tour, lượt truy cập. CEO có thể lọc dữ liệu theo thời gian, xuất file CSV/PDF.</p>
+    <div class="image-wrapper">
+        <img src="img/feature_report.png" alt="Thống kê và Báo cáo" />
+    </div>
+</section>
+
+<section id="lienhe">
+    <h2>3.7 Trang thông tin & liên hệ</h2>
+    <p>Hiển thị thông tin giới thiệu về hệ thống, nhóm phát triển, liên hệ (email, hotline, form gửi góp ý). Kết nối với mạng xã hội.</p>
+    <div class="image-wrapper">
+        <img src="img/feature_contact.png" alt="Trang thông tin và liên hệ" />
+    </div>
+</section>
+
             <section id="cautruc">
                 <h1>4. Cấu trúc thư mục & file</h1>
 
@@ -341,7 +453,8 @@ php artisan db:seed
                                             <ul>
                                                 <li>Người dùng có thể truy cập các trang: <strong>Giới thiệu</strong>,
                                                     <strong>Gallery</strong>, <strong>Liên hệ</strong>, <strong>Gửi thắc
-                                                        mắc</strong>.</li>
+                                                        mắc</strong>.
+                                                </li>
                                                 <li>Form liên hệ sẽ gửi thông tin đến quản trị viên để xử lý yêu cầu của
                                                     người dùng.</li>
                                             </ul>
