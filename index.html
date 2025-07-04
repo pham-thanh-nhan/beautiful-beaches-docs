@@ -63,7 +63,7 @@
                     <li><a href="#caidat">Hướng dẫn cài đặt & chạy dự án</a></li>
                     <li><a href="#sudung">Hướng dẫn sử dụng các chức năng</a></li>
                     <li><a href="#thanhvien">Các thành viên & phân công công việc</a></li>
-                    <li><a href="#phuluc">Phụ lục: Một số đoạn code mẫu</a></li>
+                   
                 </ul>
             </nav>
         </aside>
@@ -189,7 +189,7 @@
                     hiểu được cách dữ liệu di chuyển trong toàn hệ thống.</p>
 
                 <div class="dfd-diagram">
-                    <img src="http://127.0.0.1:5500/img/so_do_DFD.svg" alt="Sơ đồ DFD Level 0">
+                    <img src="/img/so_do_DFD.svg" alt="Sơ đồ DFD Level 0">
                     <p class="dfd-caption">Hình: Sơ đồ luồng dữ liệu cấp 0 (DFD Level 0)</p>
                 </div>
             </section>
@@ -383,8 +383,8 @@ php artisan key:generate
 
                 <p><strong>5. Cấu hình database trong <code>.env</code>:</strong></p>
                 <ul>
-                    <li>Mặc định dùng SQLite: <code>DB_CONNECTION=sqlite</code></li>
-                    <li>Nếu dùng MySQL, sửa lại các thông tin kết nối</li>
+                    <li>Mặc định dùng MySQL: <code>DB_CONNECTION=sqlite</code></li>
+                    <li>Nếu dùng SQLite, sửa lại các thông tin kết nối</li>
                 </ul>
 
                 <p><strong>6. Tạo database và migrate:</strong></p>
@@ -482,7 +482,7 @@ php artisan db:seed
                         </tr>
                         <tr>
                             <td>Phan Văn Hiếu</td>
-                            <td>Frontend</td>
+                            <td>Frontend (Đại ca nhóm)</td>
                             <td>Giao diện người dùng, responsive</td>
                         </tr>
                         <tr>
@@ -495,57 +495,7 @@ php artisan db:seed
 
             </section>
 
-            <section id="phuluc">
-                <h1>8. Phụ lục: Một số đoạn code mẫu <a name="phu-luc-doan-code-mau"></a></h1>
-
-                <h3>8.1 Migration tạo bảng <code>reviews</code></h3>
-                <div class="code-block">
-                    <code>
-&lt;?php<br>
-Schema::create('reviews', function (Blueprint $table) {<br>
-&nbsp;&nbsp;$table-&gt;id();<br>
-&nbsp;&nbsp;$table-&gt;foreignId('user_id')-&gt;constrained()-&gt;onDelete('cascade');<br>
-&nbsp;&nbsp;$table-&gt;unsignedBigInteger('beach_id');<br>
-&nbsp;&nbsp;$table-&gt;tinyInteger('rating')-&gt;unsigned();<br>
-&nbsp;&nbsp;$table-&gt;text('comment')-&gt;nullable();<br>
-&nbsp;&nbsp;$table-&gt;timestamps();<br>
-&nbsp;&nbsp;$table-&gt;foreign('beach_id')-&gt;references('id')-&gt;on('beaches')-&gt;onDelete('cascade');<br>
-});
-    </code>
-                </div>
-
-                <h3>8.2 Model <code>Review</code></h3>
-                <div class="code-block">
-                    <code>
-&lt;?php<br>
-class Review extends Model<br>
-{<br>
-&nbsp;&nbsp;use HasFactory;<br>
-&nbsp;&nbsp;protected $fillable = ['user_id', 'beach_id', 'rating', 'comment'];<br>
-}
-    </code>
-                </div>
-                <h3>8.3 Controller trả về danh sách review</h3>
-                <div class="code-block">
-                    <code>
-&lt;?php<br>
-public function index()<br>
-{<br>
-&nbsp;&nbsp;$reviews = Review::all();<br>
-&nbsp;&nbsp;return response()-&gt;json($reviews);<br>
-}
-    </code>
-                </div>
-
-                <h3>8.4 Route reviews</h3>
-                <div class="code-block">
-                    <code>
-&lt;?php<br>
-Route::get('/reviews', [ReviewController::class, 'index']);
-    </code>
-                </div>
-            </section>
-
+            
             <section id="ketluan">
                 <h2>Kết luận</h2>
                 <p>
